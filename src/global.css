@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body-center {
+  background: linear-gradient(90deg, #9A35EF 0.97%, #4B00C4 46.41%, #4176D6 101.25%);
+}
+
+.body-init {
+  background: linear-gradient(260.39deg, #00315F -3.36%, #40137A 51.91%, #7A1363 94.34%);
+}
+
+.align-image {
+  margin: 0 auto;
+}
