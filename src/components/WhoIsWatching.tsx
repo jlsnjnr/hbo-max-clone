@@ -8,7 +8,7 @@ export function WhoIsWatching() {
     <div className="body-init flex h-screen justify-between items-center flex-col">
       <div className="text-center">
         <img src={splashImg} className="align-image w-40 h-40 flex align-center justify-center" alt="" /> 
-        <h2 className="text-white">Who Is Watching?</h2>
+        <h2 className="text-white text-3xl md:text-6xl">Who Is Watching?</h2>
       </div>
       
       <div className="flex w-full md:w-[411px] items-center justify-around">
