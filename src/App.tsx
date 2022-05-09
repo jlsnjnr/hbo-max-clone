@@ -22,23 +22,23 @@ export function App() {
           <h2 className="text-white text-6xl">Who Is Watching?</h2>
         </div>
          
-        <div className="flex">
-          <button className="mx-12" onClick={() => console.log('man')}>
+        <div className="flex w-[411px] items-center justify-around">
+          <button className="" onClick={() => console.log('man')}>
             <img src={avatarMan} alt="" />
             <span className="text-white text-xl mt-6 block">Júnior</span>
           </button>
-          <button className="mx-12" onClick={() => console.log('woman')}>
+          <button className="" onClick={() => console.log('woman')}>
             <img src={avatarWoman} alt="" />
             <span className="text-white text-xl mt-6 block">Júlia</span>
           </button>
         </div>
 
-        <div className="flex my-4">
-          <button className="mx-14 flex items-center justify-center h-12 w-40 bg-[#FFFFFF33] rounded-full hover:bg-[#5B1CE6] transition-colors duration-500">
+        <div className="flex my-4 w-[411px] items-center justify-around">
+          <button className="flex items-center justify-center h-12 w-40 bg-[#FFFFFF33] rounded-full hover:bg-[#5B1CE6] transition-colors duration-500">
             <Plus className="text-white mx-1" />
             <p className="text-white opacity-100 mx-1">Adult</p>
           </button>
-          <button className="mx-14 flex items-center justify-center h-12 w-40 bg-[#FFFFFF33] rounded-full hover:bg-[#5B1CE6] transition-colors duration-500">
+          <button className="flex items-center justify-center h-12 w-40 bg-[#FFFFFF33] rounded-full hover:bg-[#5B1CE6] transition-colors duration-500">
             <Plus className="text-white mx-1" />
             <p className="text-white opacity-100 mx-1">Kid</p>
           </button>
@@ -49,7 +49,7 @@ export function App() {
 
   return (
     <div className="body-center flex h-screen justify-center items-center flex-col">
-      <img src={splashImg} alt="" />  
+      <img src={splashImg} className="w-3/5 md:w-96" alt="" />  
       <div className="w-6 h-6 flex items-center justify-center overflow-hidden">
         <CircleNotch weight="bold" className="w-12 h-12 animate-spin text-white" />
       </div>
