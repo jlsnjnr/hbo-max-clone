@@ -11,13 +11,13 @@ export function WhoIsWatching() {
         <h2 className="text-white text-3xl md:text-6xl">Who Is Watching?</h2>
       </div>
       
-      <div className="flex w-full md:w-[411px] items-center justify-around">
+      <div className="flex w-full md:w-[411px] 2xl:w-[511px] items-center justify-around ">
         <button onClick={() => console.log('man')}>
-          <img src={avatarMan} className="w-32 md:w-full" alt="" />
+          <img src={avatarMan} className="w-32 md:w-full 2xl:w-60" alt="" />
           <span className="text-white text-xl mt-6 block">Júnior</span>
         </button>
         <button onClick={() => console.log('woman')}>
-          <img src={avatarWoman} className="w-32 md:w-full" alt="" />
+          <img src={avatarWoman} className="w-32 md:w-full 2xl:w-60" alt="" />
           <span className="text-white text-xl mt-6 block">Júlia</span>
         </button>
       </div>
