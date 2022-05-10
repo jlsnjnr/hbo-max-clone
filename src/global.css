@@ -13,3 +13,7 @@
 .align-image {
   margin: 0 auto;
 }
+
+.blur-image {
+  backdrop-filter: blur(20px)
+}
