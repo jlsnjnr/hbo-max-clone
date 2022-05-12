@@ -29,7 +29,7 @@ export function Header({
     <body className="font-gilroy-medium bg-hero-pattern text-white bg-no-repeat bg-cover bg-zinc-900 overflow-x-hidden">
       <div className="p-12">
         <header className="container flex items-center justify-between mx-auto bg-[#00000041] p-3 px-12 rounded-3xl blur-image">
-          <img src={splashImg} className="w-32 h-16" alt="" />
+          <img src={splashImg} className="h:10 w-20 md:w-32 md:h-16" alt="" />
 
           <div className="hidden md:flex text-x1 gap-12">
             <span>Movies</span>
@@ -40,7 +40,7 @@ export function Header({
 
           <img
             onClick={onFeedbackRestartRequested}
-            className="w-12 h-12 cursor-pointer"
+            className="h-8 w-8  md:w-12 md:h-12 cursor-pointer"
             src={feedbackTypeInfo.image.source}
             alt={feedbackTypeInfo.image.alt}
           />
@@ -107,7 +107,9 @@ export function Header({
         </main>
 
         <section className="container mx-auto">
-          <h2 className="text-xl text-center md:text-left md:text-3xl font-gilroy-bold">Popular Collections</h2>
+          <h2 className="text-xl text-center md:text-left md:text-3xl font-gilroy-bold">
+            Popular Collections
+          </h2>
 
           <div className="cursor-pointer m-5 flex gap-5 overflow-x-auto scrollbar-hide">
             <img src={image1} alt="" />
@@ -126,7 +128,9 @@ export function Header({
         </section>
 
         <section className="container mx-auto">
-          <h2 className="text-xl text-center md:text-left md:text-3xl font-gilroy-bold">New Releases</h2>
+          <h2 className="text-xl text-center md:text-left md:text-3xl font-gilroy-bold">
+            New Releases
+          </h2>
 
           <div className="m-5 flex gap-5 overflow-x-auto scrollbar-hide">
             <img src={imageBottom1} alt="" className="cursor-pointer" />
