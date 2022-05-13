@@ -34,7 +34,7 @@ export function Header({
           <div className="hidden md:flex text-x1 gap-12">
             <span>Movies</span>
             <span>TV shows</span>
-            <span>Animationds</span>
+            <span>Animations</span>
             <span>Upgrade</span>
           </div>
 
