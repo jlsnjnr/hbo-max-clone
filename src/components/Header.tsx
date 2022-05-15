@@ -1,29 +1,50 @@
-import { FeedbackType, feedbackTypes } from "./WhoIsWatching";
 import splashImg from "../assets/splashscreen.svg";
 import play from "../assets/play.svg";
-import image1 from "../assets/image1.png";
-import image2 from "../assets/image2.png";
-import image3 from "../assets/image3.png";
-import image4 from "../assets/image4.png";
-import image5 from "../assets/image5.png";
-import image6 from "../assets/image6.png";
-import imageBottom1 from "../assets/imageBottom1.png";
-import imageBottom2 from "../assets/imageBottom2.png";
-import imageBottom3 from "../assets/imageBottom3.png";
-import imageBottom4 from "../assets/imageBottom4.png";
+import avatarWoman from '../assets/avatar-woman.svg'
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import api from "../services/api";
 
-interface FeedbackContentStepProps {
-  feedbackType: FeedbackType;
-  onFeedbackRestartRequested: () => void;
-  onFeedbackSent: () => void;
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import { LoadingLogin } from "./LoadingLogin";
+
+interface IMovie {
+  id:number;
+  title:string;
+  poster_path: string;
 }
 
-export function Header({
-  feedbackType,
-  onFeedbackRestartRequested,
-  onFeedbackSent,
-}: FeedbackContentStepProps) {
-  const feedbackTypeInfo = feedbackTypes[feedbackType];
+export function Header() {
+  const [filmes, setFilmes] = useState<IMovie[]>([]);
+  const [filmesBottom, setFilmesBottom] = useState<IMovie[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(()=>{
+
+    async function loadFilmes(){
+      const response = await api.get("movie/now_playing", {
+        params:{
+         api_key: "28fc232cc001c31e8a031f419d0a14ca",
+         language: "pt-BR",
+         page: 1,
+        }
+      })
+
+      setFilmes(response.data.results.slice(0, 12))
+      setFilmesBottom(response.data.results.slice(12, 20))
+      setLoading(false);
+    }
+  
+    loadFilmes();
+  }, [])
+
+  if(loading){
+    return(
+      <LoadingLogin />
+    )
+  }
 
   return (
     <body className="font-gilroy-medium bg-hero-pattern text-white bg-no-repeat bg-center bg-cover bg-zinc-900 overflow-x-hidden">
@@ -39,10 +60,9 @@ export function Header({
           </div>
 
           <img
-            onClick={onFeedbackRestartRequested}
             className="h-8 w-8  md:w-12 md:h-12 cursor-pointer"
-            src={feedbackTypeInfo.image.source}
-            alt={feedbackTypeInfo.image.alt}
+            src={avatarWoman}
+            alt='foto do usuario'
           />
         </header>
 
@@ -111,20 +131,27 @@ export function Header({
             Popular Collections
           </h2>
 
-          <div className="cursor-pointer m-5 flex gap-5 overflow-x-auto scrollbar-hide">
-            <img src={image1} alt="" />
-            <a href="/movie.html">
-              <img src={image2} alt="" className="max-w-[17.5rem] rounded-xl" />
-            </a>
-            <img src={image3} alt="" />
-            <img src={image4} alt="" />
-            <img src={image5} alt="" />
-            <img src={image6} alt="" />
-            <a href="/movie.html">
-              <img src={image1} alt="" className="max-w-[17.5rem] rounded-xl" />
-            </a>
-            <img src={image2} alt="" />
-          </div>
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={6}
+            onSwiper={(swiper) => console.log(swiper)}
+            className="my-5"
+          >
+            {filmes.map((filme) => {
+              return(
+                <SwiperSlide key={filme.id}>
+                  <Link to={`/filme/${filme.id}`}>
+                    <img 
+                      className="w-[219px] h-[280px] object-cover rounded-lg" 
+                      src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} 
+                      alt={filme.title} 
+                    />
+                  </Link>
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
+
         </section>
 
         <section className="container mx-auto">
@@ -132,15 +159,26 @@ export function Header({
             New Releases
           </h2>
 
-          <div className="m-5 flex gap-5 overflow-x-auto scrollbar-hide">
-            <img src={imageBottom1} alt="" className="cursor-pointer" />
-            <img src={imageBottom2} alt="" className="cursor-pointer" />
-            <img src={imageBottom3} alt="" className="cursor-pointer" />
-            <img src={imageBottom4} alt="" className="cursor-pointer" />
-            <img src={imageBottom1} alt="" className="cursor-pointer" />
-            <img src={imageBottom3} alt="" className="cursor-pointer" />
-            <img src={imageBottom4} alt="" className="cursor-pointer" />
-          </div>
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={4}
+            onSwiper={(swiper) => console.log(swiper)}
+            className="my-5"
+          >
+            {filmesBottom.map((filme) => {
+              return(
+                <SwiperSlide key={filme.id}>
+                  <Link to={`/filme/${filme.id}`}>
+                    <img 
+                      className="w-[338px] h-[280px] object-cover rounded-lg" 
+                      src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} 
+                      alt={filme.title} 
+                    />
+                  </Link>
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
         </section>
       </div>
     </body>
