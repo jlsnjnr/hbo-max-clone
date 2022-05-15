@@ -136,7 +136,7 @@ export function Header() {
             breakpoints={{
               640: {
                 width: 640,
-                slidesPerView: 1,
+                slidesPerView: 2,
               },
               768: {
                 width: 768,
@@ -151,7 +151,7 @@ export function Header() {
                 <SwiperSlide key={filme.id}>
                   <Link to={`/filme/${filme.id}`}>
                     <img 
-                      className="w-[219px] h-[280px] object-cover rounded-lg" 
+                      className="w-[338px] h-[280px] md:w-[219px] md:h-[280px] object-cover rounded-lg" 
                       src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} 
                       alt={filme.title} 
                     />
