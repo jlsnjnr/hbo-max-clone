@@ -47,7 +47,7 @@ export function Header() {
   }
 
   return (
-    <body className="font-gilroy-medium bg-hero-pattern text-white bg-no-repeat bg-center bg-cover bg-zinc-900 overflow-x-hidden">
+    <body className="font-gilroy-medium bg-hero-pattern text-white bg-no-repeat bg-cover bg-zinc-900 overflow-x-hidden">
       <div className="p-12">
         <header className="container flex items-center justify-between mx-auto bg-[#00000041] p-3 px-12 rounded-3xl blur-image">
           <img src={splashImg} className="h:10 w-20 md:w-32 md:h-16" alt="" />
