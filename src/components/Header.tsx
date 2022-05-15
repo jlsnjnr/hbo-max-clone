@@ -133,7 +133,16 @@ export function Header() {
 
           <Swiper
             spaceBetween={50}
-            slidesPerView={6}
+            breakpoints={{
+              640: {
+                width: 640,
+                slidesPerView: 1,
+              },
+              768: {
+                width: 768,
+                slidesPerView: 3,
+              },
+            }}
             onSwiper={(swiper) => console.log(swiper)}
             className="my-5"
           >
@@ -161,7 +170,16 @@ export function Header() {
 
           <Swiper
             spaceBetween={50}
-            slidesPerView={4}
+            breakpoints={{
+              640: {
+                width: 640,
+                slidesPerView: 1,
+              },
+              768: {
+                width: 768,
+                slidesPerView: 2,
+              },
+            }}
             onSwiper={(swiper) => console.log(swiper)}
             className="my-5"
           >

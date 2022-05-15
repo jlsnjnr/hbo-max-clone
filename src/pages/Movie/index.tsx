@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import api from '../../services/api';
 import splashImg from "../../assets/splashscreen.svg";
 import avatarWoman from '../../assets/avatar-woman.svg'
+import { LoadingLogin } from '../../components/LoadingLogin';
 
 interface IMovie {
   id: number;
@@ -50,9 +51,7 @@ export function Movie(){
 
   if(loading){
     return(
-      <div className="filme-info">
-        <h1>Carregando detalhes...</h1>
-      </div>
+      <LoadingLogin />
     )
   }
 
