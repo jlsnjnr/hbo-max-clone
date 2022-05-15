@@ -17,6 +17,7 @@ export function Movie(){
   const { id } = useParams();
   const navigate = useNavigate();
 
+  // @ts-ignore
   const [filme, setFilme] = useState<IMovie>({});
   const [loading, setLoading] = useState(true);
 
