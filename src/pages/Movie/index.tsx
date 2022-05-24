@@ -60,8 +60,7 @@ export function Movie(){
   
   return(
     <body style={{
-      backgroundImage: `url('https://image.tmdb.org/t/p/original/${filme.backdrop_path}')`,
-      
+      backgroundImage: `url('https://image.tmdb.org/t/p/original/${filme.backdrop_path}')`, 
     }} className="font-gilroy-medium bg-zinc-900 text-white bg-no-repeat bg-cover overflow-x-hidden">
 
       <div className=" p-12">
