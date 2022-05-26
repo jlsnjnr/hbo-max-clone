@@ -13,6 +13,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - React Js (Vite)
 - [Tailwind CSS](https://tailwindcss.com/)
 - Axios
+- SwiperJs
 
 ## 🚧 Projeto:
 
